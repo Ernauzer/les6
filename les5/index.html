@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Js function</title>
+</head>
+<body>
+    
+
+    <script>
+        function f (a = 2, b = 3, c) {
+            function sum () {
+                return a + b;
+            }
+
+            if (typeof c === "function") {
+                return c();
+            }
+
+            return sum();
+        }
+        function t () {
+            return "Я вместо аргумента с";
+        }
+        console.log(f(+prompt("Цифра, число для первого аргумента"),+prompt("Цифра, число для второго аргумента"))); // 3 аргумент может быть функция t;
+    </script>
+</body>
+</html>
