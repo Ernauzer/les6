@@ -9,17 +9,17 @@
 <body>
     <script>
         var result = "";
-        function getTriangle (lines = 5,symbol = "_") {
-            if ( lines <= 3 ) {
+        function getTriangle (lines = 5, symbol = "_") {
+            if ( lines < 4 ) {
                 alert("Введи больше строк, так себе елочка. " + " Больше 3.");
             } 
-            else if (symbol.length >= 2 ) {
-                alert("Введите только 1 символ! "  + "\n" + "Вы ввели " + symbol.length + " символ(а). ");
+            else if (symbol.length > 1 ) {
+                symbol = symbol.slice(1, 2);
             }
             else {
                 for (var i = 1;i < lines;i++ ) {
-                var spaces = " ".repeat(lines - i);
-                result += spaces + symbol.repeat(i + i - 1) + "\n"; 
+                    var spaces = " ".repeat(lines - i);
+                    result += spaces + symbol.repeat(i + i - 1) + "\n"; 
                 }
                 alert(result); 
             }
